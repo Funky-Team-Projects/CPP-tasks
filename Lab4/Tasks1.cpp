@@ -38,6 +38,17 @@ int task6(){
 }
 
 int task7(){
+	int a, b;
+	int res = 0;
+	readInt("Please, would you be so kindly to insert the first number>", a);
+	readInt("Please, would you be so kindly to insert the first number>", b);
+	for (int i = a; i <= b; i++){
+		if (i*i % 10 == 6) {
+			res += i;
+		}
+	}
+	cout << "Drumroll .... Sum is equal " << res << endl;
+
 	return 0;
 }
 
