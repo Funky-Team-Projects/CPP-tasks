@@ -1,4 +1,5 @@
 #include "taskf.h"
+#include "hfunct.h"
 
 
 using namespace std;
@@ -38,16 +39,7 @@ int task6(){
 }
 
 int task7(){
-	int a, b;
-	int res = 0;
-	readInt("Please, would you be so kindly to insert the first number>", a);
-	readInt("Please, would you be so kindly to insert the first number>", b);
-	for (int i = a; i <= b; i++){
-		if (i*i % 10 == 6) {
-			res += i;
-		}
-	}
-	cout << "Drumroll .... Sum is equal " << res << endl;
+	task9();
 
 	return 0;
 }
@@ -61,11 +53,12 @@ int task9(){
 	int res = 0;
 	readInt("Please, would you be so kindly to insert the first number>", a);
 	readInt("Please, would you be so kindly to insert the first number>", b);
-	for (int i = a; i <= b; i++){
+	res = mostProblemSolver(a, b, [](int i){return i*i % 10 == 6; });
+	/*for (int i = a; i <= b; i++){
 		if (i*i % 10 == 6) {
 			res += i;
 		}
-	}
+	}*/
 	cout << "Drumroll .... Sum is equal " << res << endl;
 	
 	return 0;
