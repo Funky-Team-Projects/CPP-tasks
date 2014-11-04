@@ -1,10 +1,12 @@
 #include <iostream>
+#include <time.h>
 
 using namespace std;
 
 int task2()
 {
 	int v1;
+	srand(time(NULL));
 	for (int i = 1; i <= 10; i++){
 		v1 = rand() % 100 + 1;
 		v2 = rand() % 100 + 1;
