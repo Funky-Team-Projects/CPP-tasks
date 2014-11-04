@@ -11,12 +11,8 @@ int task12(){
 }
 
 int task13(){
-	#include <iostream>
 
 	using namespace std;
-
-	void task13()
-{
 	int a, b, sum = 0, z = 0;
 	float sredArif;
 	cout << "Enter A> "; cin >> a;
@@ -30,7 +26,7 @@ int task13(){
 	if (z != 0)
 		sredArif = sum / z;
 	cout << "Average of " << a << " and " << b << " that end with 7 are " << sredArif << endl;
-	system("pause");
+
 
 
 	return 0;
