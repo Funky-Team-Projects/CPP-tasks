@@ -20,7 +20,22 @@ int task2()
 	system("pause");
 	return 0;
 }
-int task3()
-{
+
+int task3(){
 	return 0;
+}
+
+int task4(){
+	double initalRun = 10;
+}
+int task5(){
+	return 0;
+}
+
+int task6(){
+	return 0;
+}
+
+int task7(){
+
 }
