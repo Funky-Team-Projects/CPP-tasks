@@ -6,6 +6,8 @@ void main()
 {
 	int a, b, sum = 0, z = 0;
 	float sredArif;
+	cout << "Enter A> "; cin >> a;
+	cout << "Enter B> "; cin >> b;
 	for (int i = a; i <= b; i++)
 	if (i % 10 == 7)
 	{
@@ -14,6 +16,6 @@ void main()
 	}
 	if (z != 0)
 		sredArif = sum / z;
-	cout << "Average of " << a << " and " << b << " are " << sredArif << endl;
+	cout << "Average of " << a << " and " << b << " that end with 7 are " << sredArif << endl;
 	system("pause");
 }
