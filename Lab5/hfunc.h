@@ -7,6 +7,7 @@
 //=====================
 //included functionality
 void readInt();
+void selectTask(int taskNum);
 
 
 
