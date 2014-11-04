@@ -83,6 +83,7 @@
     <ClCompile Include="Tasks1.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="hfunc.h" />
     <ClInclude Include="taskf.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
