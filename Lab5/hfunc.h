@@ -6,10 +6,8 @@
 //included dependencies
 //=====================
 //included functionality
-void readInt();
+void readInt(char* message, int &n);
 void selectTask(int taskNum);
-
-
 
 
 #endif

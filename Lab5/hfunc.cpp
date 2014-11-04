@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include "taskf.h"
 
+// ============================================
+// This is cpp file where all the necesary misc
+// functionality will be included
+
 void readInt(char* message, int &n){
 	printf(message);
 	scanf_s("%d", &n);
@@ -17,6 +21,6 @@ void selectTask(int taskNum){
 		/*case 8: task2(); break;
 		case 9: task2(); break;
 		case 10: task2(); break;*/
-	default:{ cout << "No such task ... yet." << endl; system("pause"); }
+	default: printf("No such task ... yet.");
 	}
 }

@@ -4,7 +4,8 @@
 using namespace std;
 
 int main(){
-	int a = 2;
+	int taskNumber;
+	readInt("enter", taskNumber);
 	selectTask(2);
 	return 0;
 }

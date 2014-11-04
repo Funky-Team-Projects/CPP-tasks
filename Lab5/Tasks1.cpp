@@ -6,6 +6,10 @@
 
 using namespace std;
 
+//=======================================
+// This cpp file contains implementations
+// of tasks form 1 to 5
+
 int task1(){
 	int v1 = 1, v2 = 2, answ, res, mark = 0;
 	srand(time(NULL));
@@ -70,13 +74,5 @@ int task4(){
 	return 0;
 }
 int task5(){
-	return 0;
-}
-
-int task6(){
-	return 0;
-}
-
-int task7(){
 	return 0;
 }

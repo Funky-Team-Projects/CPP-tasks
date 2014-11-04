@@ -13,7 +13,7 @@ using namespace std;
 //    ((=====))
 
 
-int 2(){
+int task1(){
 	return task2();
 }
 

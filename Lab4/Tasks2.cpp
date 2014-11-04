@@ -14,7 +14,7 @@ int task13(){
 
 	using namespace std;
 	int a, b, sum = 0, z = 0;
-	float sredArif;
+	double sredArif;
 	cout << "Enter A> "; cin >> a;
 	cout << "Enter B> "; cin >> b;
 	for (int i = a; i <= b; i++)
