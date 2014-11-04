@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void main()
+void task1()
 {
 	int a, b, sum = 0, z = 0;
 	float sredArif;
