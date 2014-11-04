@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iomanip>
+#include "hfunc.h"
 
 using namespace std;
 
@@ -70,7 +71,18 @@ int task3(){
 }
 
 int task4(){
-	double initalRun = 10;
+	//* Edited by Vladislav...
+	double distanceInitial = 10;
+	double distanceSum = 0, distanceCurrent = distanceInitial;
+	int days;
+	readInt("Enter number of days in run: ", days);
+	for (int i = 1; i < days; i++)
+	{
+		distanceCurrent = distanceCurrent*1.1;
+		distanceSum += distanceCurrent;
+		printf("Day - %f ; Distance: %f", i, distanceCurrent);
+	}
+	printf("Summar distance in %d days is %d", distanceSum, distanceSum);
 	return 0;
 }
 int task5(){

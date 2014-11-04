@@ -8,8 +8,8 @@
 #include<stdio.h>
 #include <stdlib.h>
 #include <iomanip>
-
 #include"hfunc.h"
+
 //=====================
 //included functionality
 int task1();
@@ -19,6 +19,9 @@ int task4();
 int task5();
 int task6();
 int task7();
+int task8();
+int task9();
+int task10();
 
 
 
