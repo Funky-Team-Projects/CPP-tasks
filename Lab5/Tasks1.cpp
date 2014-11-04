@@ -5,7 +5,7 @@ using namespace std;
 
 int task2()
 {
-	int v1;
+	int v1,v2,answ,res,mark;
 	srand(time(NULL));
 	for (int i = 1; i <= 10; i++){
 		v1 = rand() % 100 + 1;
