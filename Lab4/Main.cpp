@@ -10,12 +10,6 @@ using namespace std;
 //       GE
 //         S!!!!!!!!!!!!!!!!
 //
-//
-//
-//
-//
-//
-//
 int main(){
 	task9();
 	system("PAUSE");
