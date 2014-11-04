@@ -14,8 +14,9 @@ int task2()
 }
 
 
+
 int task4(){
-	return 0;
+	double initalRun = 10;
 }
 int task5(){
 	return 0;
