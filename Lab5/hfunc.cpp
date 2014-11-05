@@ -31,22 +31,14 @@ void selectTask(int taskNum){
 }
 bool happyNum(int num1)
 {
-	bool check=false;
+	bool check = false;
 	int aftComa;
-	for (int num = num1; num >= 0; num = num / 10){
+	int num = num1;
+	while (num > 0) {
 		aftComa = num % 10;
-		if ((aftComa == 7) || (aftComa == 4)){
-			check = true;
-			cout << aftComa << endl << num << endl;
-	}
-		else check = false;
-	}
-	/*while (num > 0) {
-		aftComa = num % 10;
-		if ((aftComa == 7) || (aftComa == 4))
-			check = true;
-		else check = false;
+		if ((aftComa == 7) || (aftComa == 4)) check = true;
+		else return check = false;
 		num = num / 10;
-	} */
+	} 
 	return check;
 }
