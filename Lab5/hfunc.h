@@ -8,6 +8,7 @@
 //included functionality
 void readInt(char* message, int &n);
 void selectTask(int taskNum);
+bool happyNum(int num);
 
 
 #endif

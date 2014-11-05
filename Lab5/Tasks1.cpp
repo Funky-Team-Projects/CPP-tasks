@@ -66,7 +66,17 @@ int task2()
 }
 
 int task3(){
-	
+	float vklad = 1000,inc;
+	for (int i = 3; i <= 12; i++){
+		vklad *= 1.02;
+		cout << "Vklad na " << i << " mesjac = " << vklad<<endl;
+	}
+	vklad = 1000;
+	for (int i = 1; i <= 10; i++){
+		inc = vklad*0.02;
+		vklad = vklad + inc;
+		cout << "Prirost za " << i << " mesjac " << inc << endl;
+	}
 	return 0;
 }
 
@@ -86,5 +96,6 @@ int task4(){
 	return 0;
 }
 int task5(){
+	
 	return 0;
 }

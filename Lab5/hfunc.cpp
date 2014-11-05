@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "taskf.h"
+using namespace std;
 
 // ============================================
 // This is cpp file where all the necesary misc
@@ -22,9 +23,30 @@ void selectTask(int taskNum){
 		case 5: task5(); break;
 		case 6: task6(); break;
 		case 7: task7(); break;
-		case 8: task2(); break;
-		case 9: task2(); break;
-		case 10: task2(); break;
+		case 8: task8(); break;
+		case 9: task9(); break;
+		case 10: task10(); break;
 		default: printf("No such task ... yet.");
 	}
+}
+bool happyNum(int num1)
+{
+	bool check=false;
+	int aftComa;
+	for (int num = num1; num >= 0; num = num / 10){
+		aftComa = num % 10;
+		if ((aftComa == 7) || (aftComa == 4)){
+			check = true;
+			cout << aftComa << endl << num << endl;
+	}
+		else check = false;
+	}
+	/*while (num > 0) {
+		aftComa = num % 10;
+		if ((aftComa == 7) || (aftComa == 4))
+			check = true;
+		else check = false;
+		num = num / 10;
+	} */
+	return check;
 }
