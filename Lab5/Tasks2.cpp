@@ -20,6 +20,9 @@ int task7(){
 }
 
 int task8(){
+	int N;
+	cout << "Enter N> "; cin >> N;
+	cout << "Enter K>"
 	return 0;
 }
 
@@ -28,7 +31,6 @@ int task9(){
 }
 
 int task10(){
-	//In PROGRESS...........
 	int N,z=0;
 	cout << "Enter N> "; cin >> N;
 	for (int i = 1; i <= N; i++){
@@ -38,6 +40,6 @@ int task10(){
 		}
 		
 	}
-	cout << z << " Happy numbers" << endl;
+	cout << endl << z << " Happy numbers" << endl;
 	return 0;
 }

@@ -29,7 +29,7 @@ void selectTask(int taskNum){
 		default: printf("No such task ... yet.");
 	}
 }
-bool happyNum(int num1)
+bool happyNum(int num1)   // For task10
 {
 	bool check = false;
 	int aftComa;
@@ -41,4 +41,4 @@ bool happyNum(int num1)
 		num = num / 10;
 	} 
 	return check;
-}
+} 
