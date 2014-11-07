@@ -66,16 +66,16 @@ int task2()
 }
 
 int task3(){
-	float vklad = 1000,inc;
-	for (int i = 3; i <= 12; i++){
+	float vklad = 1000, inc, oldVklad=1000;
+	for (int i = 1; i <= 12; i++){
 		vklad *= 1.02;
-		cout << "Vklad na " << i << " mesjac = " << vklad<<endl;
-	}
-	vklad = 1000;
-	for (int i = 1; i <= 10; i++){
-		inc = vklad*0.02;
-		vklad = vklad + inc;
+		if (i>=3)
+		cout << "Vklad na " << i << " mesjac = " << vklad<<"  ";
+		inc = vklad-oldVklad;
+		//vklad = vklad + inc;
+		if (i<=10)
 		cout << "Prirost za " << i << " mesjac " << inc << endl;
+		cout << endl;
 	}
 	return 0;
 }
