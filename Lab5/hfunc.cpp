@@ -42,3 +42,31 @@ bool happyNum(int num1)   // For task10
 	} 
 	return check;
 } 
+int binaryCode(int num, int kolZero)
+{
+	int K0 = 0, b = num, maxSim = -1, K = kolZero, z=0;
+	int arrayNum[100];
+	//////////////////////////////////////////////
+	do {
+		arrayNum[maxSim + 1] = b % 2;
+		if (b % 2 == 0)
+			K0++;
+		maxSim++;
+
+		b = b / 2;
+	} while (b > 1);
+	if (b == 1){
+		arrayNum[maxSim + 1] = 1;
+		maxSim++;
+	}
+	///////////////////////////////////////// - ÷икл записи двоичного кода в €чейки массива
+	if (K0 == K){
+		z++;
+		for (int I = maxSim; I >= 0; I--){
+			cout << arrayNum[I];
+		}
+		cout << endl;
+	}
+	///////////////////////////////////////////////// - проверка на кол-во нулей в числе и вывод числа(массива) на экран
+	return z;
+}

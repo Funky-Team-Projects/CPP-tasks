@@ -10,7 +10,7 @@ int main(){
 		int taskNumber;
 		readInt("Enter task number: ", taskNumber);
 		selectTask(taskNumber);
-		cout << "Want to do anything else ?  y/n	"; cin >> a;
+		cout << "Want to do anything else ?  y/n	__"; cin >> a;
 	} while (a != 'n');
 	return 0;
 }

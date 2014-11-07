@@ -9,6 +9,7 @@
 void readInt(char* message, int &n);
 void selectTask(int taskNum);
 bool happyNum(int num);
+int binaryCode(int num, int kolZero);
 
 
 #endif
