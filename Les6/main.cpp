@@ -1,6 +1,5 @@
 #include "tfunc.h"
 
 int main(){
-	task1();
-
+	task2();
 }
