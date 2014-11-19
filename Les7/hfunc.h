@@ -8,10 +8,7 @@
 #include <Windows.h>
 
 //=====================
-//included functionality
-void readInt(char* message, int &n);
-
-
+//included classes
 class winDraw {
 	HWND myconsole;
 	HDC mydc;
@@ -29,6 +26,8 @@ public:
 	void sleep(int milliseconds);
 };
 
+//included functionality
+void readInt(char* message, int &n);
 
 
 #endif
