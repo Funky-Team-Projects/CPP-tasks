@@ -15,18 +15,20 @@ void readInt(char* message, int &n){
 
 /* Vector class*/
 class Vect{
-	int x, y;
+	double x, y;
 public:
-	Vect(int x, int y);
+	Vect(double x, double y);
 	Vect(Vect *clone);
 	void rotate(double degree);
+	double lengthSqr();
+	double length();
 	void operator * (const int);
 	int X();
 	int Y();
 };
 
 
-Vect::Vect(int x, int y){
+Vect::Vect(double x, double y){
 	this->x = x;
 	this->y = y;
 }
@@ -38,6 +40,9 @@ Vect::Vect(Vect *clone){
 
 int Vect::X(){ return x; }
 int Vect::Y(){ return y; }
+
+double Vect::lengthSqr(){ return x*x + y*y; }
+double Vect::length(){ return sqrt(x*x + y*y); }
 
 void Vect::rotate(double degree){
 	int xn = x*cos(degree) - y*sin(degree);

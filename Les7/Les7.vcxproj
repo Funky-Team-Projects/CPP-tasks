@@ -84,6 +84,7 @@
   <ItemGroup>
     <ClCompile Include="hfunc.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Problems.cpp" />
     <ClCompile Include="winDraw.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

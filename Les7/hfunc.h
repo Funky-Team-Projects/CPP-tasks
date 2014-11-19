@@ -31,11 +31,13 @@ public:
 
 /* Vector class*/
 class Vect{
-	int x, y;
+	double x, y;
 public:
-	Vect(int x, int y);
+	Vect(double x, double y);
 	Vect(Vect *clone);
 	void rotate(double degree);
+	double lengthSqr();
+	double length();
 	void operator * (const int);
 	int X();
 	int Y();
