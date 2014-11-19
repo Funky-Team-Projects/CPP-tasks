@@ -17,7 +17,7 @@ public:
 	void clearScreen();
 	void pause();
 	void sleep(int milliseconds);
-	
+	void putPixel(int x, int y)
 };
 
 winDraw::winDraw(){
@@ -68,11 +68,15 @@ void winDraw::clearScreen(){
 	system("cls");
 }
 
-void pause(){
+void winDraw::pause(){
 	cin.get();
 }
 
-void sleep(int milliseconds){
+void winDraw::putPixel(int x, int y){
+	SetPixel(myconsole, x, y, color);
+}
+
+void winDraw::sleep(int milliseconds){
 	Sleep(milliseconds);
 }
 

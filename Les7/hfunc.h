@@ -24,6 +24,7 @@ public:
 	void clearScreen();
 	void pause();
 	void sleep(int milliseconds);
+	void putPixel(int x, int y);
 };
 
 //included functionality
