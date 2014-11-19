@@ -73,7 +73,7 @@ void winDraw::pause(){
 }
 
 void winDraw::putPixel(int x, int y){
-	SetPixel(myconsole, x, y, color);
+	SetPixel(mydc, x, y, color);
 }
 
 void winDraw::sleep(int milliseconds){
