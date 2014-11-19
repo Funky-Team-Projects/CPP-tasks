@@ -21,6 +21,8 @@ public:
 	Vect(Vect *clone);
 	void rotate(double degree);
 	Vect operator * (const int);
+	int X();
+	int Y();
 };
 
 
@@ -33,6 +35,9 @@ Vect::Vect(Vect *clone){
 	this->y = clone->y;
 	this->x = clone->x;
 }
+
+int Vect::X(){ return x; }
+int Vect::Y(){ return y; }
 
 void Vect::rotate(double degree){
 	int xn = x*cos(degree) - y*sin(degree);

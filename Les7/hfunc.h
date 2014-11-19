@@ -36,6 +36,8 @@ public:
 	Vect(Vect *clone);
 	void rotate(double degree);
 	Vect operator * (const int);
+	int X();
+	int Y();
 };
 
 //included functionality
