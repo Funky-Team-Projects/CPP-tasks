@@ -20,7 +20,7 @@ public:
 	Vect(int x, int y);
 	Vect(Vect *clone);
 	void rotate(double degree);
-	Vect operator * (const int);
+	void operator * (const int);
 	int X();
 	int Y();
 };
@@ -46,7 +46,7 @@ void Vect::rotate(double degree){
 	y = yn;
 }
 
-Vect Vect::operator* (const int multiplicand){
+void Vect::operator* (const int multiplicand){
 	x = x*multiplicand;
 	y = y*multiplicand;
 }
