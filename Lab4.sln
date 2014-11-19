@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
+# Visual Studio Express 2013 for Windows Desktop
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab4", "Lab4\Lab4.vcxproj", "{FD1E0475-A2C6-4C3F-B0E5-97F4577E844B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Les4", "Lab4\Lab4.vcxproj", "{FD1E0475-A2C6-4C3F-B0E5-97F4577E844B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab5", "Lab5\Lab5.vcxproj", "{BFFCDC29-8712-4329-9087-C3ACEA803ABB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Les5", "Lab5\Lab5.vcxproj", "{BFFCDC29-8712-4329-9087-C3ACEA803ABB}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Les6", "Les6\Les6.vcxproj", "{9021AB9B-52A7-4D7D-9BB0-94359DDA6CD5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Les7", "Les7\Les7.vcxproj", "{33FA22F2-735E-4386-90E5-38E54392A9F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,16 @@ Global
 		{9021AB9B-52A7-4D7D-9BB0-94359DDA6CD5}.Release|Mixed Platforms.Build.0 = Release|Win32
 		{9021AB9B-52A7-4D7D-9BB0-94359DDA6CD5}.Release|Win32.ActiveCfg = Release|Win32
 		{9021AB9B-52A7-4D7D-9BB0-94359DDA6CD5}.Release|Win32.Build.0 = Release|Win32
+		{33FA22F2-735E-4386-90E5-38E54392A9F9}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{33FA22F2-735E-4386-90E5-38E54392A9F9}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{33FA22F2-735E-4386-90E5-38E54392A9F9}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{33FA22F2-735E-4386-90E5-38E54392A9F9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{33FA22F2-735E-4386-90E5-38E54392A9F9}.Debug|Win32.Build.0 = Debug|Win32
+		{33FA22F2-735E-4386-90E5-38E54392A9F9}.Release|Any CPU.ActiveCfg = Release|Win32
+		{33FA22F2-735E-4386-90E5-38E54392A9F9}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{33FA22F2-735E-4386-90E5-38E54392A9F9}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{33FA22F2-735E-4386-90E5-38E54392A9F9}.Release|Win32.ActiveCfg = Release|Win32
+		{33FA22F2-735E-4386-90E5-38E54392A9F9}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

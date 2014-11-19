@@ -11,10 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{FD1E0475-A2C6-4C3F-B0E5-97F4577E844B}</ProjectGuid>
+    <ProjectGuid>{33FA22F2-735E-4386-90E5-38E54392A9F9}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Lab4</RootNamespace>
-    <ProjectName>Les4</ProjectName>
+    <RootNamespace>Les7</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -79,14 +78,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="HelperFunctions.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Tasks1.cpp" />
-    <ClCompile Include="Tasks2.cpp" />
+    <ClInclude Include="hfunc.h" />
+    <ClInclude Include="tfunc.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="hfunct.h" />
-    <ClInclude Include="taskf.h" />
+    <ClCompile Include="hfunc.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="winDraw.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
