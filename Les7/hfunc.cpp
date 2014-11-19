@@ -22,9 +22,9 @@ public:
 	void rotate(double degree);
 	double lengthSqr();
 	double length();
-	void operator * (const int);
-	int X();
-	int Y();
+	void multiply(double multiplicand);
+	double X();
+	double Y();
 };
 
 
@@ -34,24 +34,24 @@ Vect::Vect(double x, double y){
 }
 
 Vect::Vect(Vect *clone){
-	this->y = clone->y;
-	this->x = clone->x;
+	this->y = clone->Y();
+	this->x = clone->X();
 }
 
-int Vect::X(){ return x; }
-int Vect::Y(){ return y; }
+double Vect::X(){ return x; }
+double Vect::Y(){ return y; }
 
 double Vect::lengthSqr(){ return x*x + y*y; }
 double Vect::length(){ return sqrt(x*x + y*y); }
 
 void Vect::rotate(double degree){
-	int xn = x*cos(degree) - y*sin(degree);
-	int yn = x*sin(degree) + y*cos(degree);
+	double xn = x*cos(degree) - y*sin(degree);
+	double yn = x*sin(degree) + y*cos(degree);
 	x = xn;
 	y = yn;
 }
 
-void Vect::operator* (const int multiplicand){
+void Vect::multiply(double multiplicand){
 	x = x*multiplicand;
 	y = y*multiplicand;
 }

@@ -17,7 +17,7 @@ public:
 	void clearScreen();
 	void pause();
 	void sleep(int milliseconds);
-	void putPixel(int x, int y);
+	void putPixel(double x, double y);
 };
 
 WinDraw::WinDraw(){
@@ -38,8 +38,8 @@ WinDraw::~WinDraw(){
 }
 
 void WinDraw::drawLine(double x0, double y0, double x1, double y1){
-	int x = x0; int y = x0;
-	for (double t = 0; t < 1; t+=0.002)
+	double x = x0; double y = y0;
+	for (double t = 0; t < 1; t+=0.01)
 	{
 		SetPixel(mydc, x, y, color);
 		x = x0 + (x1 - x0)*t;
@@ -72,7 +72,7 @@ void WinDraw::pause(){
 	cin.get();
 }
 
-void WinDraw::putPixel(int x, int y){
+void WinDraw::putPixel(double x, double y){
 	SetPixel(mydc, x, y, color);
 }
 

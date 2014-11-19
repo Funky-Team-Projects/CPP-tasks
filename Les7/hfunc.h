@@ -26,7 +26,7 @@ public:
 	void clearScreen();
 	void pause();
 	void sleep(int milliseconds);
-	void putPixel(int x, int y);
+	void putPixel(double x, double y);
 };
 
 /* Vector class*/
@@ -38,12 +38,14 @@ public:
 	void rotate(double degree);
 	double lengthSqr();
 	double length();
-	void operator * (const int);
-	int X();
-	int Y();
+	void multiply(double multiplicand);
+	double X();
+	double Y();
 };
 
 //included functionality
+# define M_PI 3.14159265358979323846  /* pi */
+
 void readInt(char* message, int &n);
 
 
