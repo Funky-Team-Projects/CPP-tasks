@@ -9,14 +9,14 @@
 
 //=====================
 //included classes
-class winDraw {
+class WinDraw {
 	HWND myconsole;
 	HDC mydc;
 	HANDLE consoleHandle;
 	COLORREF color;
 public:
-	winDraw();
-	~winDraw();
+	WinDraw();
+	~WinDraw();
 	void setColor(COLORREF color);
 	void drawLine(double x1, double y1, double x2, double y2);
 	void setConsoleSize(int width, int height);

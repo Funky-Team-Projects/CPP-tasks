@@ -2,14 +2,14 @@
 #include <Windows.h>
 using namespace std;
 
-class winDraw {
+class WinDraw {
 	HWND myconsole;
 	HDC mydc;
 	HANDLE consoleHandle;
 	COLORREF color;
 public:
-	winDraw();
-	~winDraw();
+	WinDraw();
+	~WinDraw();
 	void setColor(COLORREF color);
 	void drawLine(double x1, double y1, double x2, double y2);
 	void setConsoleSize(int width, int height);
@@ -20,7 +20,7 @@ public:
 	void putPixel(int x, int y);
 };
 
-winDraw::winDraw(){
+WinDraw::WinDraw(){
 	//Get a console handle
 	myconsole = GetConsoleWindow();
 	//Get a handle to device context
@@ -32,12 +32,12 @@ winDraw::winDraw(){
 	SetConsoleCursorInfo(consoleHandle, &cursor);
 }
 
-winDraw::~winDraw(){
+WinDraw::~WinDraw(){
 	ReleaseDC(myconsole, mydc);
 	cin.ignore();
 }
 
-void winDraw::drawLine(double x0, double y0, double x1, double y1){
+void WinDraw::drawLine(double x0, double y0, double x1, double y1){
 	int x = x0; int y = x0;
 	for (double t = 0; t < 1; t+=0.002)
 	{
@@ -47,36 +47,36 @@ void winDraw::drawLine(double x0, double y0, double x1, double y1){
 	}
 }
 
-void winDraw::setConsoleSize(int width, int height){
+void WinDraw::setConsoleSize(int width, int height){
 	/* ==== Exception should be added*/
 	RECT r;
 	GetWindowRect(myconsole, &r); //stores the console's current dimensions
 	MoveWindow(myconsole, r.left, r.top, width, height, TRUE);
 }
 
-void winDraw::setConsolePos(int x, int y){
+void WinDraw::setConsolePos(int x, int y){
 	RECT r;
 	GetWindowRect(myconsole, &r); //stores the console's current dimensions
 	MoveWindow(myconsole, x, y, r.right, r.bottom, TRUE);
 }
 
-void winDraw::setColor(COLORREF color){
+void WinDraw::setColor(COLORREF color){
 	this->color = color;
 }
 
-void winDraw::clearScreen(){
+void WinDraw::clearScreen(){
 	system("cls");
 }
 
-void winDraw::pause(){
+void WinDraw::pause(){
 	cin.get();
 }
 
-void winDraw::putPixel(int x, int y){
+void WinDraw::putPixel(int x, int y){
 	SetPixel(mydc, x, y, color);
 }
 
-void winDraw::sleep(int milliseconds){
+void WinDraw::sleep(int milliseconds){
 	Sleep(milliseconds);
 }
 
