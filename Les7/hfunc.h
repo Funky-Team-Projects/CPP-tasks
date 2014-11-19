@@ -9,6 +9,8 @@
 
 //=====================
 //included classes
+
+/* WinDraw class */
 class WinDraw {
 	HWND myconsole;
 	HDC mydc;
@@ -25,6 +27,15 @@ public:
 	void pause();
 	void sleep(int milliseconds);
 	void putPixel(int x, int y);
+};
+/* Vector class*/
+class Vect{
+	int x, y;
+public:
+	Vect(int x, int y);
+	Vect(Vect *clone);
+	void rotate(double degree);
+	Vect operator * (const int);
 };
 
 //included functionality
