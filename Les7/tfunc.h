@@ -8,6 +8,7 @@
 //=====================
 //included functionality
 void DrawTree();
+void DrawStar();
 
 
 #endif
