@@ -10,6 +10,6 @@ void main(){
 //	wd->setColor(RGB(255, 255, 255));
 //	wd->drawLine(5, 5, 100, 100);
 //	delete wd;
-//	DrawTree();
-	DrawStar();
+	DrawTree();
+//	DrawStar();
 }
