@@ -13,6 +13,9 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Classes.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{99B1B656-2221-4EA9-A9B9-E1B608BC20FF}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
