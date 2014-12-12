@@ -6,8 +6,8 @@ namespace tree{
 	const int C_WIDTH = 600, C_HEIGHT = 600;
 	const double B_SIZE = 140;
 	const double MULTIPLIER = 0.6;
-	const double angle2 = M_PI / 3;
-	const double angle1 = M_PI / 3;
+	const double angle1 = M_PI / (1 + 2.61803398875);
+	const double angle2 = M_PI - (M_PI / (1 + 2.61803398875));
 	const bool thirdBranchOn = false;
 }
 
