@@ -11,11 +11,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Den.cpp" />
+    <ClCompile Include="hfunc.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MazeGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Classes.h" />
+    <ClInclude Include="hfunc.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{99B1B656-2221-4EA9-A9B9-E1B608BC20FF}</ProjectGuid>
