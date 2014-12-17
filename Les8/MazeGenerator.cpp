@@ -38,7 +38,7 @@ void MazeGenerator::initMaze(){
 			else maze[x][y] = 0;
 			isProcessed[x][y] = false;
 		}
-	//Filling border elements with zeros
+		//Filling border elements with zeros
 		for (int x = 0; x < mazeCols; x++)
 		{
 			maze[x][0] = 0;
@@ -97,7 +97,7 @@ void MazeGenerator::show(){
 			else printf(" ");
 
 		}
-		printf("%\n");
+		printf("\n");
 	}
 }
 
