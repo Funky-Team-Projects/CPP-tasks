@@ -9,12 +9,19 @@
 
 //=====================
 //included classes
+//added coment
 class Point{
 public:
-	double x, y;
+	int x, y;
 	Point(int x, int y);
 };
 
+class Tuple{
+public:
+	Point *wall;
+	Point *too;
+	Tuple(Point* wall, Point* too);
+};
 //included functionality
 void readInt(char* message, int &n);
 

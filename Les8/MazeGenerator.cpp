@@ -1,10 +1,10 @@
-#include<list>
+#include<vector>
 #include"hfunc.h"
 using namespace std;
 
 class MazeGenerator {
 private:
-	list<Point> toProcess;
+	vector<Tuple> toProcess;
 	bool** isProcessed;
 	int** maze;
 	int mazeRows, mazeCols;
@@ -12,6 +12,7 @@ private:
 
 	void generatePaths();
 	void initMaze();
+	void addAdjToWall(Point* block);
 public:
 	MazeGenerator(int rows, int columns);
 	int** getMaze();
@@ -20,6 +21,7 @@ public:
 };
 
 void MazeGenerator::initMaze(){
+	//Added
 	// Allocating memory
 	maze = new int*[mazeCols];
 	isProcessed = new bool*[mazeCols];
@@ -52,7 +54,49 @@ void MazeGenerator::initMaze(){
 }
 
 void MazeGenerator::generatePaths(){
-	int x = 0; int y = 0;
+	int x = 2; int y = 2;
+	//Adding inicial walls
+	maze[x][y] = true;
+	Tuple *t1 = new Tuple(new Point(x + 1, y), new Point(x + 2, y));
+	Tuple *t2 = new Tuple(new Point(x, y + 1), new Point(x, y + 2));
+	toProcess.push_back(*t1);
+	toProcess.push_back(*t2);
+	while (!toProcess.empty()){
+		//Chosing random tuple
+		int n = rand() % toProcess.size();
+		Tuple t = toProcess.at(rand() % toProcess.size());
+		toProcess.erase(toProcess.begin()+n);
+		Point *too = t.too;
+		Point *wall = t.wall;
+		//Adding element to maze spanning tree
+		isProcessed[wall->x][wall->y] = true;
+		maze[wall->x][wall->y] = 1;
+		//Adding adjusted walls
+		addAdjToWall(too);
+	}
+
+
+}
+
+void MazeGenerator::addAdjToWall(Point* block){
+	int x = block->x;
+	int y = block->y;
+	if (!isProcessed[x][y + 2]){
+		Tuple* t1 = new Tuple(new Point(x, y + 1), new Point(x, y + 2));
+		toProcess.push_back(*t1);
+	}
+	if (!isProcessed[x][y - 2]){
+		Tuple* t2 = new Tuple(new Point(x, y - 1), new Point(x, y - 2));
+		toProcess.push_back(*t2);
+	}
+	if (!isProcessed[x + 2][y]){
+		Tuple* t3 = new Tuple(new Point(x + 1, y), new Point(x + 2, y));
+		toProcess.push_back(*t3);
+	}
+	if (!isProcessed[x - 2][y]){
+		Tuple* t4 = new Tuple(new Point(x - 1, y + 1), new Point(x - 2, y));
+		toProcess.push_back(*t4);
+	}
 }
 
 MazeGenerator::MazeGenerator(int rows, int columns){
@@ -61,6 +105,7 @@ MazeGenerator::MazeGenerator(int rows, int columns){
 	this->mazeRows = rows * 2 + 3;
 	this->mazeCols = cols * 2 + 3;
 	initMaze();
+	generatePaths();
 }
 
 int MazeGenerator::getHeight(){
