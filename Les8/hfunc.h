@@ -6,10 +6,10 @@
 //included dependencies
 #include <iostream>
 #include <Windows.h>
+#include<time.h>
 
 //=====================
 //included classes
-//added coment
 class Point{
 public:
 	int x, y;
@@ -18,10 +18,11 @@ public:
 
 class Tuple{
 public:
-	Point *wall;
-	Point *too;
-	Tuple(Point* wall, Point* too);
+	Tuple(Point* wall, Point*too);
+	Point* Too();
+	Point* Wall();
 };
+
 //included functionality
 void readInt(char* message, int &n);
 

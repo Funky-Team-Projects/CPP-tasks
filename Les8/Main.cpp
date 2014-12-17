@@ -1,5 +1,6 @@
 #include <iostream>
 #include "classes.h"
+#include <vector>
 
 using namespace std;
 
@@ -20,5 +21,7 @@ int main(){
 	MazeGenerator * mg = new MazeGenerator(20, 20);
 	int** maze = mg->getMaze();
 	showArray(maze, mg->getWidth(), mg->getHeight());
+
+
 	return 0;
 }

@@ -1,18 +1,19 @@
 #include<vector>
 #include"hfunc.h"
+#include<time.h>
 using namespace std;
 
 class MazeGenerator {
 private:
-	vector<Tuple> toProcess;
+	vector<Tuple*> toProcess;
 	bool** isProcessed;
 	int** maze;
 	int mazeRows, mazeCols;
 	int rows, cols;
 
+	void show();
 	void generatePaths();
 	void initMaze();
-	void addAdjToWall(Point* block);
 public:
 	MazeGenerator(int rows, int columns);
 	int** getMaze();
@@ -35,6 +36,7 @@ void MazeGenerator::initMaze(){
 		for (int y = 0; y < mazeRows; y++){
 			if ((y % 2 == 0) && (x % 2 == 0)) maze[x][y] = 1;
 			else maze[x][y] = 0;
+			isProcessed[x][y] = false;
 		}
 	//Filling border elements with zeros
 		for (int x = 0; x < mazeCols; x++)
@@ -54,48 +56,48 @@ void MazeGenerator::initMaze(){
 }
 
 void MazeGenerator::generatePaths(){
-	int x = 2; int y = 2;
-	//Adding inicial walls
-	maze[x][y] = true;
-	Tuple *t1 = new Tuple(new Point(x + 1, y), new Point(x + 2, y));
-	Tuple *t2 = new Tuple(new Point(x, y + 1), new Point(x, y + 2));
-	toProcess.push_back(*t1);
-	toProcess.push_back(*t2);
+	//Initializing first stuff;
+	isProcessed[2][2] = true;
+	Tuple* t1 = new Tuple(new Point(3, 2), new Point(4, 2));
+	Tuple* t2 = new Tuple(new Point(2, 3), new Point(2, 4));
+	
+	toProcess.push_back(t1);
+	toProcess.push_back(t2);
+
 	while (!toProcess.empty()){
-		//Chosing random tuple
+		//Taking tuple
 		int n = rand() % toProcess.size();
-		Tuple t = toProcess.at(rand() % toProcess.size());
+		Tuple * tupleToProcess = toProcess[n];
 		toProcess.erase(toProcess.begin()+n);
-		Point *too = t.too;
-		Point *wall = t.wall;
-		//Adding element to maze spanning tree
-		isProcessed[wall->x][wall->y] = true;
-		maze[wall->x][wall->y] = 1;
-		//Adding adjusted walls
-		addAdjToWall(too);
+		//Processing it
+
+		//Open chosen block
+		int x = tupleToProcess->Too()->x; int y = tupleToProcess->Too()->y;
+		if (!isProcessed[x][y]) maze[tupleToProcess->Wall()->x][tupleToProcess->Wall()->y] = 1;
+		isProcessed[x][y] = true;
+
+		/*show();
+		system("PAUSE");*/
+
+		//Add adj walls;
+		if (!isProcessed[x][y + 2]) toProcess.push_back((new Tuple(new Point(x, y + 1), new Point(x, y + 2))));
+		if (!isProcessed[x][y - 2]) toProcess.push_back((new Tuple(new Point(x, y - 1), new Point(x, y - 2))));
+		if (!isProcessed[x + 2][y]) toProcess.push_back((new Tuple(new Point(x + 1, y), new Point(x + 2, y))));
+		if (!isProcessed[x - 2][y]) toProcess.push_back((new Tuple(new Point(x - 1, y), new Point(x - 2, y))));
+
 	}
-
-
 }
 
-void MazeGenerator::addAdjToWall(Point* block){
-	int x = block->x;
-	int y = block->y;
-	if (!isProcessed[x][y + 2]){
-		Tuple* t1 = new Tuple(new Point(x, y + 1), new Point(x, y + 2));
-		toProcess.push_back(*t1);
-	}
-	if (!isProcessed[x][y - 2]){
-		Tuple* t2 = new Tuple(new Point(x, y - 1), new Point(x, y - 2));
-		toProcess.push_back(*t2);
-	}
-	if (!isProcessed[x + 2][y]){
-		Tuple* t3 = new Tuple(new Point(x + 1, y), new Point(x + 2, y));
-		toProcess.push_back(*t3);
-	}
-	if (!isProcessed[x - 2][y]){
-		Tuple* t4 = new Tuple(new Point(x - 1, y + 1), new Point(x - 2, y));
-		toProcess.push_back(*t4);
+void MazeGenerator::show(){
+	for (int y = 0; y < mazeRows; y++)
+	{
+		for (int x = 0; x < mazeCols; x++)
+		{
+			if (maze[x][y] == 1) printf("O");
+			else printf(" ");
+
+		}
+		printf("%\n");
 	}
 }
 
@@ -104,6 +106,7 @@ MazeGenerator::MazeGenerator(int rows, int columns){
 	this->cols = columns;
 	this->mazeRows = rows * 2 + 3;
 	this->mazeCols = cols * 2 + 3;
+	srand(time(NULL));
 	initMaze();
 	generatePaths();
 }
