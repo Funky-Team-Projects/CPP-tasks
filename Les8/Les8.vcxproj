@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Les7\winDraw.cpp" />
     <ClCompile Include="hfunc.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MazeGenerator.cpp" />

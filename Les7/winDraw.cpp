@@ -18,6 +18,7 @@ public:
 	void pause();
 	void sleep(int milliseconds);
 	void putPixel(double x, double y);
+	void putRect(double x1, double y1, double x2, double y2);
 };
 
 WinDraw::WinDraw(){
@@ -35,6 +36,17 @@ WinDraw::WinDraw(){
 WinDraw::~WinDraw(){
 	ReleaseDC(myconsole, mydc);
 	cin.ignore();
+}
+
+void WinDraw::putRect(double x1, double y1, double x2, double y2){
+	for (int y = y1; y < y2; y++)
+	{
+		for (int x = x1; x < x2; x++)
+		{
+			putPixel(x, y);
+		}
+	}
+
 }
 
 void WinDraw::drawLine(double x0, double y0, double x1, double y1){

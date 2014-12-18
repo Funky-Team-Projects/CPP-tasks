@@ -20,7 +20,11 @@ void showArray(int** a, int X, int Y){
 int main(){
 	MazeGenerator * mg = new MazeGenerator(20, 20);
 	int** maze = mg->getMaze();
-	showArray(maze, mg->getWidth(), mg->getHeight());
+	showArray(maze, mg->getWidth(), mg->getHeight()); 
+	WinDraw * dw = new WinDraw();
+	/*dw->setConsoleSize(600, 600);
+	dw->setColor(RGB(255, 255, 255));
+	dw->putRect(50, 50, 62, 62); */
 
 
 	return 0;
