@@ -10,12 +10,11 @@ private:
 	int** maze;
 	int mazeRows, mazeCols;
 	int rows, cols;
-
-	void show();
 	void generatePaths();
 	void initMaze();
 public:
 	MazeGenerator(int rows, int columns);
+	void show();
 	int** getMaze();
 	int getWidth();
 	int getHeight();
@@ -93,8 +92,8 @@ void MazeGenerator::show(){
 	{
 		for (int x = 0; x < mazeCols; x++)
 		{
-			if (maze[x][y] == 1) printf("O");
-			else printf(" ");
+			if (maze[x][y] == 1) printf(" ");
+			else printf("O");
 
 		}
 		printf("\n");

@@ -61,9 +61,23 @@ void WinDraw::drawLine(double x0, double y0, double x1, double y1){
 
 void WinDraw::setConsoleSize(int width, int height){
 	/* ==== Exception should be added*/
-	RECT r;
-	GetWindowRect(myconsole, &r); //stores the console's current dimensions
-	MoveWindow(myconsole, r.left, r.top, width, height, TRUE);
+	RECT rectCur;
+	GetWindowRect(myconsole, &rectCur); //stores the console's current dimensions
+
+	SMALL_RECT rectNew;
+	rectNew.Top = 0;
+	rectNew.Left = 0;
+	rectNew.Bottom = height-1;
+	rectNew.Right = width-1;
+
+	COORD coord;
+	coord.X = width;
+	coord.Y = height;
+
+	SetConsoleScreenBufferSize(consoleHandle, coord);            // Set Buffer Size
+	SetConsoleWindowInfo(consoleHandle, TRUE, &rectNew);         // Set Window Size 
+
+	MoveWindow(myconsole, rectCur.left, rectCur.top, width, height, TRUE);
 }
 
 void WinDraw::setConsolePos(int x, int y){

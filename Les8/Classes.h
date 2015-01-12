@@ -22,6 +22,7 @@ private:
 public:
 	MazeGenerator(int rows, int columns);
 	int** getMaze();
+	void show();
 	int getWidth();
 	int getHeight();
 };
