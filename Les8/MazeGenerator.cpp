@@ -1,18 +1,23 @@
 #include<vector>
 #include"hfunc.h"
 #include<time.h>
+
+#define corner = 50;
+
 using namespace std;
 
 class MazeGenerator {
 private:
 	vector<Tuple*> toProcess;
+	WinDraw* wd;
 	bool** isProcessed;
 	int** maze;
 	int mazeRows, mazeCols;
 	int rows, cols;
-	void generatePaths();
 	void initMaze();
+
 public:
+	void generatePaths();
 	MazeGenerator(int rows, int columns);
 	void show();
 	int** getMaze();
@@ -57,6 +62,14 @@ void MazeGenerator::initMaze(){
 void MazeGenerator::generatePaths(){
 	//Initializing first stuff;
 	isProcessed[2][2] = true;
+
+	//Drawing first rect
+	wd->setColor(RGB(255, 0, 0));
+	wd->putRect(50 + 10 * 2, 50 + 10 * 2, 60 + 10 * 2, 60 + 10 * 2);
+	wd->setColor(RGB(255, 255, 255));
+	wd->putRect(50 + 10 * 2, 50 + 10 * 2, 60 + 10 * 2, 60 + 10 * 2);
+
+	//Putting first element in the list
 	Tuple* t1 = new Tuple(new Point(3, 2), new Point(4, 2));
 	Tuple* t2 = new Tuple(new Point(2, 3), new Point(2, 4));
 	
@@ -69,22 +82,34 @@ void MazeGenerator::generatePaths(){
 		Tuple * tupleToProcess = toProcess[n];
 		toProcess.erase(toProcess.begin()+n);
 		//Processing it
-
-		//Open chosen block
-		int x = tupleToProcess->Too()->x; int y = tupleToProcess->Too()->y;
-		if (!isProcessed[x][y]) maze[tupleToProcess->Wall()->x][tupleToProcess->Wall()->y] = 1;
-		isProcessed[x][y] = true;
-
-		/*show();
-		system("PAUSE");*/
+		int cellX = tupleToProcess->Too()->x; int cellY = tupleToProcess->Too()->y;
+		int wallX = tupleToProcess->Wall()->x; int wallY = tupleToProcess->Wall()->y;
+		if (!isProcessed[cellX][cellY]){
+			//Open chosen block if necessary
+			maze[wallX][wallY] = 1;
+			//Drawing rectangles
+			wd->setColor(RGB(255, 255, 255));
+			wd->setColor(RGB(255, 255, 255));
+			wd->putRect(50+10*wallX, 50+10*wallY, 60+10*wallX, 60+10*wallY);
+			wd->setColor(RGB(0, 0, 255));
+			wd->putRect(50 + 10 * cellX, 50 + 10 * cellY, 60 + 10 * cellX, 60 + 10 * cellY);
+			wd->sleep(50); //Sleep
+			wd->setColor(RGB(255, 255, 255));
+			wd->putRect(50 + 10 * cellX, 50 + 10 * cellY, 60 + 10 * cellX, 60 + 10 * cellY);
+		}
+			
+		isProcessed[cellX][cellY] = true;
 
 		//Add adj walls;
-		if (!isProcessed[x][y + 2]) toProcess.push_back((new Tuple(new Point(x, y + 1), new Point(x, y + 2))));
-		if (!isProcessed[x][y - 2]) toProcess.push_back((new Tuple(new Point(x, y - 1), new Point(x, y - 2))));
-		if (!isProcessed[x + 2][y]) toProcess.push_back((new Tuple(new Point(x + 1, y), new Point(x + 2, y))));
-		if (!isProcessed[x - 2][y]) toProcess.push_back((new Tuple(new Point(x - 1, y), new Point(x - 2, y))));
+		if (!isProcessed[cellX][cellY + 2]) toProcess.push_back((new Tuple(new Point(cellX, cellY + 1), new Point(cellX, cellY + 2))));
+		if (!isProcessed[cellX][cellY - 2]) toProcess.push_back((new Tuple(new Point(cellX, cellY - 1), new Point(cellX, cellY - 2))));
+		if (!isProcessed[cellX + 2][cellY]) toProcess.push_back((new Tuple(new Point(cellX + 1, cellY), new Point(cellX + 2, cellY))));
+		if (!isProcessed[cellX - 2][cellY]) toProcess.push_back((new Tuple(new Point(cellX - 1, cellY), new Point(cellX - 2, cellY))));
 
 	}
+	delete wd;
+	delete isProcessed;
+	toProcess.clear();
 }
 
 void MazeGenerator::show(){
@@ -107,7 +132,10 @@ MazeGenerator::MazeGenerator(int rows, int columns){
 	this->mazeCols = cols * 2 + 3;
 	srand(time(NULL));
 	initMaze();
-	generatePaths();
+	//Init windraw
+	wd = new WinDraw();
+	wd->setConsoleSize(650, 700);	
+	//Done
 }
 
 int MazeGenerator::getHeight(){
