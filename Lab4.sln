@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Les8", "Les8\Les8.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Exam", "Exam\Exam.vcxproj", "{FE6F578B-0995-4EBE-84E1-9577A4FDCF1F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Les9", "Les9\Les9.vcxproj", "{B175697A-F9F0-4376-B752-478EE2A8C737}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +87,16 @@ Global
 		{FE6F578B-0995-4EBE-84E1-9577A4FDCF1F}.Release|Mixed Platforms.Build.0 = Release|Win32
 		{FE6F578B-0995-4EBE-84E1-9577A4FDCF1F}.Release|Win32.ActiveCfg = Release|Win32
 		{FE6F578B-0995-4EBE-84E1-9577A4FDCF1F}.Release|Win32.Build.0 = Release|Win32
+		{B175697A-F9F0-4376-B752-478EE2A8C737}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{B175697A-F9F0-4376-B752-478EE2A8C737}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{B175697A-F9F0-4376-B752-478EE2A8C737}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{B175697A-F9F0-4376-B752-478EE2A8C737}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B175697A-F9F0-4376-B752-478EE2A8C737}.Debug|Win32.Build.0 = Debug|Win32
+		{B175697A-F9F0-4376-B752-478EE2A8C737}.Release|Any CPU.ActiveCfg = Release|Win32
+		{B175697A-F9F0-4376-B752-478EE2A8C737}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{B175697A-F9F0-4376-B752-478EE2A8C737}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{B175697A-F9F0-4376-B752-478EE2A8C737}.Release|Win32.ActiveCfg = Release|Win32
+		{B175697A-F9F0-4376-B752-478EE2A8C737}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
