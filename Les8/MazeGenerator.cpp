@@ -93,7 +93,7 @@ void MazeGenerator::generatePaths(){
 			wd->putRect(50+10*wallX, 50+10*wallY, 60+10*wallX, 60+10*wallY);
 			wd->setColor(RGB(0, 0, 255));
 			wd->putRect(50 + 10 * cellX, 50 + 10 * cellY, 60 + 10 * cellX, 60 + 10 * cellY);
-			wd->sleep(50); //Sleep
+			wd->sleep(150); //Sleep
 			wd->setColor(RGB(255, 255, 255));
 			wd->putRect(50 + 10 * cellX, 50 + 10 * cellY, 60 + 10 * cellX, 60 + 10 * cellY);
 		}

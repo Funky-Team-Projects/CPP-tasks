@@ -17,7 +17,10 @@ class WinDraw {
 	HANDLE consoleHandle;
 	COLORREF color;
 public:
-	WinDraw();
+	WinDraw(HINSTANCE hInstance,
+	HINSTANCE hPrevInstance,
+	LPSTR lpCmdLine,
+	int nCmdShow);
 	~WinDraw();
 	void setColor(COLORREF color);
 	void drawLine(double x1, double y1, double x2, double y2);
